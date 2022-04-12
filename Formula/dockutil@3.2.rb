@@ -1,4 +1,4 @@
-class Dockutil < Formula
+class DockutilAT32 < Formula
   version "3.0.2"
   desc "Tool for managing dock items."
   homepage "https://github.com/kcrawford/dockutil"
