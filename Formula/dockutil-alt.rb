@@ -1,13 +1,15 @@
 class DockutilAlt < Formula
+  version "3.0.2"
   desc "Tool for managing dock items."
   homepage "https://github.com/kcrawford/dockutil"
   url "https://github.com/kcrawford/dockutil/releases/download/#{version}/dockutil-#{version}.pkg"
-  version "3.0.2"
-  sha256 "0245e7df6bf3d35820f0fe4b6fa5bdd1d109fa304df4a740e11acdf78dde20d8"
+  sha256 "175137ea747e83ed221d60b18b712b256ed31531534cde84f679487d337668fd"
   license "Apache-2.0"
 
   def install
-    system "pkgutil", "--expand-full", "dockutil-#{version}.pkg", "usr/local/bin/dockutil"
+    bootstrap = buildpath/"bootstrap"
+    system "pkgutil", "--expand-full", "dockutil-3.0.2.pkg", "usr/local/bin"
+    bootstrap.install Dir["bin/*"]
   end
 
   test do
